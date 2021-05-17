@@ -1,0 +1,284 @@
+/* Custom Properties*/
+
+:root {
+    --primario: rgb(54, 54, 54);
+    --secundario: rgb(0, 20, 110);
+    --primarioObscuro: rgb(0, 0, 0);
+    --botonhover: rgb(255, 208, 0);
+    --fuentePrimaria: 'Arial', Helvetica, sans-serif;
+    --fuenteSecundaria: 'Roboto', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.bg-primario {
+    background-color: var(--secundario);
+}
+
+.bg-blanco {
+    background-color: white;
+}
+
+.barra {
+    display: grid;
+    grid-template-columns: 0px 1fr;
+    align-items: center;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 1rem;
+}
+
+h1,
+h2 {
+    font-family: var(--fuenteSecundaria);
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    padding: 20px;
+    color: white;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-barra {
+    background-color: var(--primarioObscuro);
+}
+
+
+/* Formulario*/
+
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+form legend {
+    font-family: var(--fuenteSecundaria);
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+}
+
+legend span {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    clear: both;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .campo {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.campo {
+    padding: 0.5rem 0;
+}
+
+.campo label {
+    font-size: 1.2rem;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"] {
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+
+.enviar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.campo input[type="submit"] {
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .5s ease-in-out;
+    flex: 1;
+}
+
+.campo input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--botonhover);
+    color: var(--secundario);
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+    .campo input[type="submit"] {
+        flex: 0 0 auto;
+    }
+}
+
+
+/*Listado de contactos*/
+
+.contactos {
+    padding: 2rem;
+    margin: 3rem auto 3rem auto;
+}
+
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+
+.total-contactos {
+    font-family: var(--fuenteSecundaria);
+    margin: 2rem auto;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+}
+
+.total-contactos span {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.buscador {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: none;
+    margin: 2rem 0;
+}
+
+.contenedor-tabla {
+    overflow: scroll;
+}
+
+.listado-contactos {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    color: black;
+}
+
+.listado-contactos thead {
+    background-color: var(--primario);
+    text-transform: uppercase;
+    color: white;
+}
+
+.listado-contactos thead th {
+    padding: 1rem 0;
+}
+
+.listado-contactos tbody td {
+    padding: .5rem;
+    text-align: center;
+}
+
+.listado-contactos button {
+    background-color: transparent!important;
+    border: none;
+}
+
+.btn {
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color .5s ease-in-out;
+}
+
+.btn-editar {
+    color: var(--secundario);
+}
+
+.btn-borrar {
+    color: var(--primario);
+}
+
+.cambio:hover {
+    cursor: pointer;
+    color: var(--botonhover);
+}
+
+
+/*Editar contacto*/
+
+.volver {
+    text-decoration: none;
+    font-size: 3rem;
+    background-color: transparent;
+    color: white;
+    transition: color .5s ease-in-out;
+}
+
+.volver:hover {
+    cursor: pointer;
+    color: var(--botonhover);
+}
+
+
+/*Notificaciones*/
+
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    opacity: 0;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-size: .7rem;
+    transition: opacity .5s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+
+/*Colores de la notificacion*/
+
+.correcto {
+    background-color: rgb(98, 206, 121);
+}
+
+.error {
+    background-color: rgb(228, 127, 174);
+}
